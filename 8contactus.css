@@ -1,0 +1,295 @@
+/* ============================================================
+   8contactus.css — Hanya style KHUSUS halaman Contact Us MDC.
+   Navbar, font, warna dasar, animasi → dari 1utama.css
+   ============================================================ */
+
+/* ===== CONTACT PAGE — 3-KOLOM LAYOUT ===== */
+.contact-page {
+  min-height: 100vh;
+  padding-top: var(--nav-h);
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+/* ===== KOLOM 1 : INFO ===== */
+.sisi-info {
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2.5rem;
+  border-right: 1px solid rgba(232,160,32,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.sisi-info::before {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: -60px;
+  width: 240px; height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232,160,32,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.info-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  max-width: 320px;
+}
+
+.section-tag {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding: 5px 12px;
+  border: 1px solid rgba(232,160,32,0.35);
+  border-radius: 20px;
+  width: fit-content;
+  background: rgba(232,160,32,0.06);
+}
+
+.info-judul {
+  font-family: var(--font-display);
+  font-size: clamp(38px, 4vw, 56px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.05;
+}
+
+.info-judul span { color: var(--gold); }
+
+.info-baris {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.7;
+}
+
+.info-icon {
+  font-size: 18px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* ===== KOLOM 2 : MAPS ===== */
+.sisi-maps {
+  position: relative;
+  background: #0a1540;
+  overflow: hidden;
+}
+
+.sisi-maps iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  border: none;
+  display: block;
+  filter: saturate(0.7) brightness(0.85) contrast(1.05);
+}
+
+.sisi-maps::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-left: 3px solid rgba(232,160,32,0.2);
+  border-right: 3px solid rgba(232,160,32,0.2);
+}
+
+/* ===== KOLOM 3 : SOSIAL & KONTAK ===== */
+.sisi-sosial {
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2.5rem;
+  border-left: 1px solid rgba(232,160,32,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.sisi-sosial::before {
+  content: '';
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232,160,32,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.sosial-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 300px;
+  width: 100%;
+}
+
+.sosial-blok {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.sosial-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(232,160,32,0.3), transparent);
+}
+
+/* Instagram Button */
+.ig-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.75rem 1.2rem;
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: opacity 0.25s, transform 0.2s, box-shadow 0.25s;
+  box-shadow: 0 4px 16px rgba(130,0,80,0.3);
+  width: fit-content;
+}
+.ig-btn:hover {
+  opacity: 0.92;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(130,0,80,0.45);
+}
+.ig-btn svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Contact List */
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-item-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.9rem 1rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px;
+  transition: background 0.2s, border-color 0.2s;
+}
+.contact-item-row:hover {
+  background: rgba(232,160,32,0.06);
+  border-color: rgba(232,160,32,0.2);
+}
+
+.contact-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.contact-val {
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.5;
+}
+
+.contact-link {
+  text-decoration: none;
+  color: rgba(255,255,255,0.8);
+  transition: color 0.2s;
+}
+.contact-link:hover { color: var(--gold); }
+
+/* ===== SCROLL TO TOP ===== */
+.scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  background: var(--gold);
+  color: var(--navy);
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(232,160,32,0.35);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 900;
+}
+.scroll-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.scroll-top:hover { background: #f0b030; }
+
+/* ===== REVEAL ANIMASI ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal:nth-child(2) { transition-delay: 0.1s; }
+.reveal:nth-child(3) { transition-delay: 0.2s; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .contact-page {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .sisi-info,
+  .sisi-sosial {
+    border: none;
+    border-bottom: 1px solid rgba(232,160,32,0.1);
+    padding: 3.5rem 2rem;
+  }
+
+  .sisi-maps iframe {
+    min-height: 320px;
+  }
+
+  .sisi-maps::after { display: none; }
+
+  .navbar-links { display: none; }
+  .hamburger { display: flex; }
+}
+
+@media (max-width: 480px) {
+  .navbar { padding: 0 1.2rem; }
+  .sisi-info, .sisi-sosial { padding: 2.5rem 1.2rem; }
+  .info-judul { font-size: 36px; }
+}

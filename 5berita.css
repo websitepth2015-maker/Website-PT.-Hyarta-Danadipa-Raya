@@ -1,0 +1,329 @@
+/* ============================================================
+   5berita.css — Halaman Berita & Kegiatan PT. Hyarta Danadipa Raya
+   Style global (navbar, font, warna, animasi) dari 1utama.css
+   ============================================================ */
+
+/* ======= HERO ======= */
+.berita-hero {
+  min-height: 45vh;
+  background:
+    linear-gradient(135deg, rgba(7,19,58,0.92) 0%, rgba(7,19,58,0.75) 100%),
+    url("foto3.jpg") center / cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+  padding: 6rem 5rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.berita-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 20% 50%, rgba(232,160,32,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.berita-hero-content {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.berita-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 8vw, 88px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.berita-hero-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.5px;
+}
+
+/* ======= WRAPPER UTAMA ======= */
+.berita-wrap {
+  background: var(--cream);
+  padding: 4rem 5rem;
+}
+
+/* ======= 2 KOLOM SEJAJAR ======= */
+.dua-kolom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* ======= HEADER TIAP KOLOM ======= */
+.kolom-judul {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--navy);
+  border-left: 3px solid var(--gold);
+  padding-left: 1rem;
+  margin: 0 0 1.25rem 0;
+}
+
+.kolom-judul.hijau {
+  border-color: #1a4a2e;
+  color: #1a4a2e;
+}
+
+/* ======= DAFTAR KARTU ======= */
+.daftar-kartu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+/* ======= KARTU BERITA ======= */
+.kartu-berita {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  color: inherit;
+  background: white;
+  border: 1px solid #e8e5de;
+  border-radius: 3px;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.kartu-berita:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(7,19,58,0.1);
+}
+
+.kartu-berita:hover .kartu-kiri-biru { background: var(--gold); }
+.kartu-berita:hover .kartu-kiri-biru .tgl-hari,
+.kartu-berita:hover .kartu-kiri-biru .tgl-bulan { color: var(--navy); }
+
+/* ======= KARTU KEGIATAN ======= */
+.kartu-kegiatan {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  color: inherit;
+  background: white;
+  border: 1px solid #e8e5de;
+  border-radius: 3px;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.kartu-kegiatan:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(26,74,46,0.12);
+}
+
+.kartu-kegiatan:hover .kartu-kiri-hijau { background: var(--gold); }
+.kartu-kegiatan:hover .kartu-kiri-hijau .tgl-hari,
+.kartu-kegiatan:hover .kartu-kiri-hijau .tgl-bulan { color: var(--navy); }
+
+/* ======= SISI KIRI (tanggal) ======= */
+.kartu-kiri-biru {
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.1rem 1rem;
+  min-width: 68px;
+  transition: background var(--transition);
+}
+
+.kartu-kiri-hijau {
+  background: #1a4a2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.1rem 1rem;
+  min-width: 68px;
+  transition: background var(--transition);
+}
+
+.kartu-tanggal-blok {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.tgl-hari {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+}
+
+.tgl-bulan {
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  white-space: nowrap;
+}
+
+/* ======= SISI KANAN (isi) ======= */
+.kartu-kanan {
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.kartu-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.kartu-judul {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.35;
+}
+
+.kartu-judul.hijau { color: #1a4a2e; }
+
+.kartu-ringkasan {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.75;
+}
+
+.kartu-footer {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--gold);
+  margin-top: 0.2rem;
+}
+
+.kartu-footer.hijau { color: #1a4a2e; }
+
+/* ======= BADGE ======= */
+.badge-kategori {
+  background: rgba(7,19,58,0.07);
+  color: var(--navy);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 20px;
+  border: 1px solid rgba(7,19,58,0.12);
+}
+
+.badge-kegiatan {
+  background: rgba(26,74,46,0.08);
+  color: #1a4a2e;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 20px;
+  border: 1px solid rgba(26,74,46,0.18);
+}
+
+.badge-selesai {
+  background: rgba(26,107,42,0.08);
+  color: #1a6b2a;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 20px;
+  border: 1px solid rgba(26,107,42,0.2);
+}
+
+.badge-akan {
+  background: rgba(232,160,32,0.1);
+  color: #8a6000;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 20px;
+  border: 1px solid rgba(232,160,32,0.3);
+}
+
+/* ======= PAGINATION ======= */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.pag-btn {
+  display: inline-block;
+  padding: 5px 14px;
+  border: 1px solid rgba(7,19,58,0.2);
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: none;
+  transition: all var(--transition);
+  background: white;
+}
+
+.pag-btn:hover,
+.pag-btn.active {
+  background: var(--navy);
+  color: white;
+  border-color: var(--navy);
+}
+
+.pag-btn.active { pointer-events: none; }
+
+.pag-btn.hijau:hover,
+.pag-btn.hijau.active {
+  background: #1a4a2e;
+  border-color: #1a4a2e;
+}
+
+/* ======= KOSONG ======= */
+.kosong {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #aaa;
+  background: white;
+  border: 1px dashed #ddd;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.kosong-icon { font-size: 36px; margin-bottom: 0.4rem; }
+.kosong p { font-size: 13px; line-height: 1.8; }
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 900px) {
+  .berita-wrap { padding: 3rem 2rem; }
+  .dua-kolom { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
+@media (max-width: 768px) {
+  .berita-hero { padding: 6rem 2rem 3rem; }
+  .kartu-berita,
+  .kartu-kegiatan { flex-direction: column; }
+  .kartu-kiri-biru,
+  .kartu-kiri-hijau { min-width: unset; padding: 0.75rem 1.25rem; }
+  .kartu-tanggal-blok { flex-direction: row; align-items: baseline; gap: 0.4rem; }
+  .tgl-hari { font-size: 18px; }
+}

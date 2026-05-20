@@ -1,0 +1,170 @@
+/* ============================================================
+   7organisasi.css
+   Hanya style KHUSUS halaman Organisasi MDC.
+   Navbar, font, warna dasar, animasi → dari 1utama.css
+   ============================================================ */
+
+/* ======= HALAMAN 1 : HERO INTRO ======= */
+
+.halaman1-org {
+  min-height: 100vh;
+  background:
+    linear-gradient(135deg, rgba(7,19,58,0.88) 0%, rgba(7,19,58,0.7) 100%),
+    url("mdc.jpg") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7rem 4rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.halaman1-org::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 20% 60%, rgba(232,160,32,0.1) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.org-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 860px;
+  gap: 1.5rem;
+  z-index: 1;
+}
+
+.org-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 7vw, 80px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.0;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.teks1 {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  line-height: 2;
+  max-width: 720px;
+}
+
+/* ======= LAYOUT BAGAN : 2 KOLOM ======= */
+
+.halaman-bagan {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 4rem 5rem;
+  gap: 4rem;
+  box-sizing: border-box;
+}
+
+.bg-cream { background: var(--cream); }
+.bg-navy  { background: var(--navy); }
+
+.kolom-kiri {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.kolom-kanan {
+  flex: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ======= KARTU DESKRIPSI ======= */
+
+.deskripsi-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 2rem;
+  border-left: 3px solid var(--gold);
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(7,19,58,0.06);
+  max-width: 300px;
+}
+
+.deskripsi-card.dark {
+  background: rgba(255,255,255,0.04);
+  border-color: var(--gold);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.deskripsi-num {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 700;
+  color: #e0ddd5;
+  line-height: 1;
+}
+.deskripsi-num.gold { color: rgba(232,160,32,0.3); }
+
+.deskripsi-judul {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--navy);
+  margin: 0;
+  line-height: 1.3;
+}
+.deskripsi-judul.light { color: var(--white); }
+
+.deskripsi-teks {
+  font-size: 17px;
+  color: #666;
+  line-height: 1.8;
+  margin: 0;
+}
+.deskripsi-teks.light { color: var(--text-muted); }
+
+/* ======= BAGAN ======= */
+
+/* ======= KOTAK BAGAN ======= */
+
+/* ======= FOTO PER HALAMAN ======= */
+
+.foto-halaman {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.foto-halaman-img {
+  width: 80%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.foto-halaman .deskripsi-card {
+  max-width: 260px;
+  width: 100%;
+}
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 768px) {
+  .halaman-bagan {
+    flex-direction: column;
+    padding: 3rem 1.5rem;
+    gap: 2rem;
+    align-items: center;
+  }
+  .deskripsi-card { max-width: 100%; }
+  .cabang { width: 280px; }
+  .kotak-manager { width: 220px; }
+  .kotak-spv { width: 180px; }
+}

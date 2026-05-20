@@ -1,0 +1,218 @@
+/* ============================================================
+   3karier.css — Halaman Karier PT. Hyarta Danadipa Raya
+   Style global (navbar, font, warna, animasi) dari 1utama.css
+   ============================================================ */
+
+/* ======= HERO ======= */
+.karier-hero {
+  min-height: 45vh;
+  background:
+    linear-gradient(135deg, rgba(7,19,58,0.92) 0%, rgba(7,19,58,0.75) 100%),
+    url("foto3.jpg") center / cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+  padding: 6rem 5rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.karier-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(232,160,32,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.karier-hero-content {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.karier-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 8vw, 88px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.karier-hero-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.5px;
+}
+
+/* ======= KONTEN ======= */
+.karier-konten {
+  background: var(--cream);
+  min-height: 60vh;
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ======= KARTU LOWONGAN ======= */
+.lowongan {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: white;
+  border: 1px solid #e8e5de;
+  border-left: 3px solid var(--navy);
+  width: 680px;
+  padding: 1.75rem 2rem;
+  border-radius: 3px;
+  transition: transform var(--transition), box-shadow var(--transition), border-left-color var(--transition);
+}
+
+.lowongan:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(7,19,58,0.1);
+  border-left-color: var(--gold);
+}
+
+.lowongan-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.lowongan-judul {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.lowongan-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.lowongan-lokasi {
+  font-size: 12px;
+  color: #888;
+}
+
+/* Deadline box */
+.lowongan-deadline {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+  flex-shrink: 0;
+  background: rgba(7,19,58,0.04);
+  border: 1px solid rgba(7,19,58,0.1);
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  min-width: 120px;
+}
+
+.lowongan-deadline.tutup {
+  background: rgba(139,26,26,0.04);
+  border-color: rgba(139,26,26,0.15);
+}
+
+.deadline-label {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.deadline-val {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.lowongan-deadline.tutup .deadline-val { color: var(--red-dark); }
+
+.lowongan-syarat {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.8;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f0ede7;
+}
+
+.lowongan-footer {
+  margin-top: 1rem;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--gold);
+}
+
+/* ======= BADGE ======= */
+.badge {
+  background: rgba(7,19,58,0.07);
+  color: var(--navy);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 20px;
+  border: 1px solid rgba(7,19,58,0.12);
+}
+
+.badge-buka {
+  background: rgba(26,107,42,0.08);
+  color: #1a6b2a;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 20px;
+  border: 1px solid rgba(26,107,42,0.2);
+}
+
+.badge-tutup {
+  background: rgba(139,26,26,0.07);
+  color: var(--red-dark);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 20px;
+  border: 1px solid rgba(139,26,26,0.15);
+}
+
+/* ======= KOSONG ======= */
+.kosong {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #aaa;
+  background: white;
+  border: 1px dashed #ddd;
+  border-radius: 4px;
+  width: 680px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.kosong-icon { font-size: 40px; margin-bottom: 0.5rem; }
+.kosong p { font-size: 14px; line-height: 1.8; }
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 768px) {
+  .karier-hero { padding: 6rem 2rem 3rem; }
+  .lowongan { width: 92%; }
+  .lowongan-top { flex-direction: column; gap: 0.75rem; }
+  .lowongan-deadline { align-items: flex-start; }
+  .kosong { width: 92%; }
+}
